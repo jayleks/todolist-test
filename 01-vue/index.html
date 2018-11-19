@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ToDo List - VueJs</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div id="todo-container"></div>
+    <script type="text/x-template" id="todo-list-template">
+        <div id="todo-app">
+            <h1>ToDo List</h1>
+            <input class="todo-new" v-model="newItem" @keyup.enter="addItem" autofocus autocomplete="off" placeholder="Новое задание" />
+            <ul class="todo-list">
+                <todo-item v-for="item in items" @remove-item="removeItem" :item="item" :key="item.id"></todo-item>
+            </ul>
+            <ul class="todo-stat">
+                <li>всего: {{total}}</li>
+                <li>выполнено: {{done}}</li>
+            </ul>
+        </div>
+    </script>
+    <script type="text/x-template" id="todo-item-template">
+        <li class="todo-item" :class="{ done: item.isDone }">
+            <label class="name">
+                <input class="state" type="checkbox" v-model="item.isDone">
+                <div>{{ item.name }}</div>
+            </label>
+            <div title="удалить" class="remove" @click="$emit('remove-item', item)"></div>
+        </li>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        ToDoList.render('#todo-container');
+    </script>
+</body>
+
+</html>
