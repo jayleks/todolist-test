@@ -1,0 +1,19 @@
+{
+  "name": "todolist-vue-bundle",
+  "version": "1.0.0",
+  "author": "leks",
+  "scripts": {
+    "dev": "webpack-dev-server --hot --open --mode development",
+    "build": "webpack --mode development"
+  },
+  "dependencies": {
+    "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.17",
+    "css-loader": "^1.0.0",
+    "webpack": "^4.20.0",
+    "webpack-cli":"^3.1.2",
+    "webpack-dev-server":"^3.1.9"
+  }}

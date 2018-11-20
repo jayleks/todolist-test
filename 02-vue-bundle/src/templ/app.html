@@ -1,0 +1,17 @@
+<div id="todo-app">
+    <h1>ToDo List</h1>
+    <input class="todo-new" v-model="newItem" @keyup.enter="addItem" autofocus autocomplete="off" placeholder="Новое задание" />
+    <ul class="todo-list">
+        <li v-for="item in items" :key="item.id" class="todo-item" :class="{ done: item.isDone }">
+            <label class="name">
+                <input class="state" type="checkbox" v-model="item.isDone">
+                <div>{{ item.name }}</div>
+            </label>
+            <div title="удалить" class="remove" @click="removeItem(item)"></div>
+        </li>
+    </ul>
+    <ul class="todo-stat">
+        <li>всего: {{total}}</li>
+        <li>выполнено: {{done}}</li>
+    </ul>
+</div>
