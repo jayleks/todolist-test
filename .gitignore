@@ -3,6 +3,7 @@
 *.min.js
 *.map
 
+test
 dist
 
 Logs/*
